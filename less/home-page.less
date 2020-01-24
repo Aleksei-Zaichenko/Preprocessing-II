@@ -1,4 +1,32 @@
+
 .home {
+
+  header {
+
+    border-bottom: 2px dashed @navigation-border;
+
+    .HeaderAndNagivation{
+      border-bottom: 2px dashed @navigation-border;
+      display: flex;
+      align-items: center;
+      padding: 2% 0;
+
+      h1{
+        width: 60%;
+      }
+
+      nav{
+        .navigationStyle();
+      }//nav
+
+    }//.HeaderAndNagivation
+
+    .text-content{
+      padding: 2% 0;
+    }
+
+  }//header
+
 
   .content-section {
     margin: 30px 0;
@@ -6,8 +34,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
+
     .text-content {
       width: 48%;
       padding-right: 1%;
@@ -20,8 +47,8 @@
       img {
         border-radius: 10px;
       }
-    }
-  }
+    }//.img-content
+  }//.content-section
 
   .inverse-content {
     padding-bottom: 30px;
@@ -56,6 +83,92 @@
     .destination {
       width: 30%;
       margin-bottom: 30px;
-    }
-  }
+    
+        .btn {
+
+          button{
+            .buttonsDesign()
+        }
+      }
+    }//.destination closes here
+  }//.content-pick closes here
+
+  @media @modile {
+    
+    header{
+
+      .HeaderAndNagivation{
+        flex-direction: column;
+
+        h1{
+          text-align: center;
+          width:100%;
+          font-size: 3rem;
+          padding-bottom: 2.5%;
+        }
+
+        nav{
+          width: 85%;
+        }
+      }//.HeaderAndNagivation
+
+      .img-fun-bus, .text-content{
+        padding: 0 4%;
+      }
+
+    }//header
+
+    .content-section {
+      flex-direction: column;
+      padding: 0 4%;
+
+      .text-content {
+        width: 100%;
+        padding-left: 1%;
+      }
+  
+      .img-content {
+        width: 100%;
+        padding-left: 1%;
+
+        img {
+          width: 98%;
+        }
+      }//.img-content
+    }//.content-section
+
+    .inverse-content {
+      padding-bottom: 6%;
+      flex-direction: column-reverse;
+  
+    }//.inverse-content
+
+    .content-destination {
+      width: 100%;
+      padding: 0 4%;
+      
+    }//.content-destination
+
+    .content-pick {
+      
+      flex-direction: column;
+      align-items: center;
+
+      .destination {
+        width: 70%;
+
+        .btn {
+
+          button{
+            .buttonsDesign(@bkgColor:#1E90FF);
+            width: 100%;
+            padding: 2.5%;
+        }
+      }
+
+      }//.destination closes here
+    }//.content-pick closes here
+
+  }// @media @mobile
+
 }// home
